@@ -78,16 +78,16 @@ rag_chain = (
 
 
 #######################################################################
-    colorama.init()
-    def type(words: str):
-        for char in words:
-            sleep(0.015)
-            sys.stdout.write(char)
-            sys.stdout.flush()
-        # print()
-    
-    url = r'https://www.virustotal.com/vtapi/v2/file/scan'
-    api= os.getenv("VT_API_KEY")
+colorama.init()
+def type(words: str):
+    for char in words:
+        sleep(0.015)
+        sys.stdout.write(char)
+        sys.stdout.flush()
+    # print()
+
+url = r'https://www.virustotal.com/vtapi/v2/file/scan'
+api= os.getenv("VT_API_KEY")
 #######################################################################
 
 
