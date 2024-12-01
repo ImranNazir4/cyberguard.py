@@ -1,4 +1,8 @@
 httpx<0.25.0
+langchain-huggingface
+sentence_transformers
+langchainhub
+faiss-cpu
 langchain
 langchain-community
 pypdf
