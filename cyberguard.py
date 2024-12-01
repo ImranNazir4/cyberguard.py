@@ -103,7 +103,7 @@ if selection=="Cyber Awareness Chatbot":
 if selection=="Malicious File Scanner":
     st.subheader("Malicious File Scanner")
     file=st.file_uploader("Select a File")
-    if file!=None st.button("Analyze"):     
+    if file!=None and st.button("Analyze"):     
         with open(file.name, mode='wb') as w:
                 w.write(file.getvalue())
         
