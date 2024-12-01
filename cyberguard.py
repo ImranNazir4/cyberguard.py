@@ -99,7 +99,7 @@ if selection=="Cyber Awareness Chatbot":
     st.subheader("Cyber Awareness Chatbot")
     query=st.text_input("Write Query Here")
     if st.button("Submit"):
-        st.write(rag_chain.invoke(query).content)
+        st.write(rag_chain.invoke(query))
 if selection=="Malicious File Scanner":
     st.subheader("Malicious File Scanner")
     file=st.file_uploader("Select a File")
