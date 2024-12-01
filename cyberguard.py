@@ -4,12 +4,16 @@ import streamlit as st
 import requests
 import json
 import sys
+import os
 import colorama
 from time import sleep 
 import json
 from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
+
+
+st.write(os.listdir())
 
 st.subheader("Malicious File Scanner")
 
