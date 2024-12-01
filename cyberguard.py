@@ -12,15 +12,64 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
+st.title("CYBER-GUARD")
 
-st.write(os.listdir())
+loader=PyPDFLoader("eu cybersecurity act.pdf")
+data = loader.load()
+#split the extracted data into text chunks using the text_splitter, which splits the text based on the specified number of characters and overlap
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
+text_chunks = text_splitter.split_documents(data)
+#download the embeddings to use to represent text chunks in a vector space, using the pre-trained model "sentence-transformers/all-MiniLM-L6-v2"
+embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+# # create embeddings for each text chunk using the FAISS class, which creates a vector index using FAISS and allows efficient searches between vectors
+vector_store = FAISS.from_documents(text_chunks, embedding=embeddings)
+# Retrieve and generate using the relevant snippets of the blog.
+retriever = vector_store.as_retriever()
+
+from langchain_groq import ChatGroq
+
+llm = ChatGroq(
+    temperature=0,
+    model="llama3-70b-8192",
+    api_key=GROQ_API_KEY
+)
+
+prompt = hub.pull("rlm/rag-prompt")
+from langchain_groq import ChatGroq
+
+llm = ChatGroq(
+    temperature=0,
+    model="llama3-70b-8192",
+    api_key=GROQ_API_KEY
+)
+
+prompt = hub.pull("rlm/rag-prompt")
+
+
+def format_docs(docs):
+    return "\n\n".join(doc.page_content for doc in docs)
+
+
+rag_chain = (
+    {"context": retriever | format_docs, "question": RunnablePassthrough()}
+    | prompt
+    | llm
+    | StrOutputParser()
+)
+
+
+
+
 
 st.subheader("Malicious File Scanner")
 
 
 selection=st.sidebar.selectbox("Select",("Cyber Awareness Chatbot","Malicious File Scanner"))
 
-
+if selection=="Cyber Awareness Chatbot":
+    query=st.text_input("Write Query Here")
+    if st.button("Submit"):
+        st.write(rag_chain.invoke(query).content)
 
 file=st.file_uploader("Select a File")
 
