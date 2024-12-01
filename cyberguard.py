@@ -14,7 +14,7 @@ load_dotenv()
 st.subheader("Malicious File Scanner")
 
 
-st.sidebar("Select",("Cyber Awareness Chatbot","Malicious File Scanner"))
+st.sidebar.selectbox("Select",("Cyber Awareness Chatbot","Malicious File Scanner"))
 
 
 
