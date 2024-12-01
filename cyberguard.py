@@ -90,16 +90,18 @@ rag_chain = (
     api= os.getenv("VT_API_KEY")
 #######################################################################
 
-st.subheader("Malicious File Scanner")
+
 
 
 selection=st.sidebar.selectbox("Select",("Cyber Awareness Chatbot","Malicious File Scanner"))
 
 if selection=="Cyber Awareness Chatbot":
+    st.subheader("Cyber Awareness Chatbot")
     query=st.text_input("Write Query Here")
     if st.button("Submit"):
         st.write(rag_chain.invoke(query).content)
 if selection=="Malicious File Scanner":
+    st.subheader("Malicious File Scanner")
     file=st.file_uploader("Select a File")
     if file!=None st.button("Analyze"):     
         with open(file.name, mode='wb') as w:
