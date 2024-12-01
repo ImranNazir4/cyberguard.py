@@ -46,7 +46,7 @@ vector_store = FAISS.from_documents(text_chunks, embedding=embeddings)
 retriever = vector_store.as_retriever()
 
 from langchain_groq import ChatGroq
-
+GROQ_API_KEY=os.getenv("GROQ_API_KEY")
 llm = ChatGroq(
     temperature=0,
     model="llama3-70b-8192",
@@ -104,7 +104,7 @@ def type(words: str):
 url = r'https://www.virustotal.com/vtapi/v2/file/scan'
 
 # api = open("vt-api.txt", "r").read()
-
+api= os.getenv("VT_API_KEY")
 
 # file_path = colorama.Fore.YELLOW + "cui2020.pdf"
 # params = {"apikey": api}
