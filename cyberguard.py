@@ -33,7 +33,7 @@ from langchain_core.output_parsers import StrOutputParser
 
 st.title("CYBER-GUARD")
 
-loader=PyPDFLoader("eu cybersecurity act.pdf")
+loader=PyPDFLoader("guide-to-the-general-data-protection-regulation-gdpr-1-1.pdf")
 data = loader.load()
 #split the extracted data into text chunks using the text_splitter, which splits the text based on the specified number of characters and overlap
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
