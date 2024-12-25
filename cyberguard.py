@@ -455,8 +455,8 @@ if selection=="Education Portal":
             st.caption("Data privacy and GDPR")
             st.video("https://youtu.be/hk-ZgRIYYXc?si=QPGmg7l0eU6FPvoL")
         with col2:
-            st.caption("Why do cybercriminals want your computer?")
-            st.video("https://youtu.be/NZ21QKzZtcI?si=rgaYN3mGvn-j-jT1")
+            st.caption("Top 5 cloud security best practices checklist")
+            st.video("https://youtu.be/ISkw0MwP2UA?si=AMiYkXKGdWTRc2zA")
         
         
 #https://youtu.be/hk-ZgRIYYXc?si=QPGmg7l0eU6FPvoL
