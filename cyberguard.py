@@ -57,36 +57,36 @@ st.title("CYBER-GUARD")
 # # Retrieve and generate using the relevant snippets of the blog.
 # retriever = new_vector_store.as_retriever()
 
-from langchain_groq import ChatGroq
-GROQ_API_KEY=os.getenv("GROQ_API_KEY")
-llm = ChatGroq(
-    temperature=0,
-    model="llama3-70b-8192",
-    api_key=GROQ_API_KEY
-)
+# from langchain_groq import ChatGroq
+# GROQ_API_KEY=os.getenv("GROQ_API_KEY")
+# llm = ChatGroq(
+#     temperature=0,
+#     model="llama3-70b-8192",
+#     api_key=GROQ_API_KEY
+# )
 
-prompt = hub.pull("rlm/rag-prompt")
-from langchain_groq import ChatGroq
+# prompt = hub.pull("rlm/rag-prompt")
+# from langchain_groq import ChatGroq
 
-llm = ChatGroq(
-    temperature=0,
-    model="llama3-70b-8192",
-    api_key=GROQ_API_KEY
-)
+# llm = ChatGroq(
+#     temperature=0,
+#     model="llama3-70b-8192",
+#     api_key=GROQ_API_KEY
+# )
 
-prompt = hub.pull("rlm/rag-prompt")
-
-
-def format_docs(docs):
-    return "\n\n".join(doc.page_content for doc in docs)
+# prompt = hub.pull("rlm/rag-prompt")
 
 
-rag_chain = (
-    {"context": retriever | format_docs, "question": RunnablePassthrough()}
-    | prompt
-    | llm
-    | StrOutputParser()
-)
+# def format_docs(docs):
+#     return "\n\n".join(doc.page_content for doc in docs)
+
+
+# rag_chain = (
+#     {"context": retriever | format_docs, "question": RunnablePassthrough()}
+#     | prompt
+#     | llm
+#     | StrOutputParser()
+# )
 
 
 #######################################################################
