@@ -90,8 +90,8 @@ llm = ChatGroq(
 
 
 def get_prompt(query):
-    prompt="""
-    "As an expert on UK cybersecurity laws and regulations, your role is to provide clear, accurate, and concise information. When asked, you should:  
+    prompt=f"""
+    As an expert on UK cybersecurity laws and regulations, your role is to provide clear, accurate, and concise information. When asked, you should:  
     
     1. **Explain laws and regulations**: Provide details about the relevant UK legislation, such as the Computer Misuse Act 1990, the Data Protection Act 2018, and the UK General Data Protection Regulation (UK GDPR). Explain their purpose, scope, and key provisions.  
     2. **Detail punishments and penalties**: Clearly outline the legal consequences, fines, or imprisonment terms for offenses like unauthorized access, data breaches, or cyber fraud.  
