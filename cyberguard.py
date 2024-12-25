@@ -54,8 +54,8 @@ st.title("CYBER-GUARD")
 
 
 
-# Retrieve and generate using the relevant snippets of the blog.
-retriever = new_vector_store.as_retriever()
+# # Retrieve and generate using the relevant snippets of the blog.
+# retriever = new_vector_store.as_retriever()
 
 from langchain_groq import ChatGroq
 GROQ_API_KEY=os.getenv("GROQ_API_KEY")
