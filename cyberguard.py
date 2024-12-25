@@ -58,7 +58,7 @@ st.title("CYBER-GUARD")
 # retriever = new_vector_store.as_retriever()
 
 # from langchain_groq import ChatGroq
-# GROQ_API_KEY=os.getenv("GROQ_API_KEY")
+GROQ_API_KEY=os.getenv("GROQ_API_KEY")
 # llm = ChatGroq(
 #     temperature=0,
 #     model="llama3-70b-8192",
