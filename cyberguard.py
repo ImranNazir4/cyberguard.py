@@ -429,23 +429,23 @@ if selection=="Education Portal":
 
     
         
-    st.html("<h4>Critical</h4>")
+    st.html("<h4>Advanced</h4>")
 
     col1,col2=st.columns(2)
     with col1:
         st.caption("Different types of AI/ML-powered cybercrimes")
-        st.video("https://youtu.be/X7kFAy1E8Jw?si=lKWx-y3Tz1_dsSQP")
+        st.video("https://youtu.be/1Z_dh9Xgtq0?si=DZq0Mg2yJM7SHgcJ")
     with col2:
         st.caption("How to respond to a network breach?")
-        st.video("https://youtu.be/Yr0xPVFcf-U?si=xNHedIZgSQbUc9f_")
+        st.video("https://youtu.be/0_2P_trzFsQ?si=_iO2hdmGjMNN9iu0")
 
     col1,col2=st.columns(2)
     with col1:
-        st.caption("Top 5 security checklist for OT devices")
-        st.video("https://youtu.be/n8mbzU0X2nQ?si=rqCjBFgrcmsj3WEw")
+        st.caption("Top 5 security checklist for IOT devices")
+        st.video("https://youtu.be/-aV0ZCRq_0g?si=BFZS4wYZqJ4rlQRp")
     with col2:
         st.caption("How to do Secure remote working?")
-        st.video("https://youtu.be/aO858HyFbKI?si=K7mDm_E4WysamUuK")
+        st.video("https://youtu.be/F-U_7CGYiHQ?si=6GWZp6RGeFkxeYaZ")
         
     with st.expander("More"):
         st.write("")
