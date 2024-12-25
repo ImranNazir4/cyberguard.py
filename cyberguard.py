@@ -104,6 +104,33 @@ def get_prompt(query):
     return prompt
 
 
+def get_data_privacy_prompt(privacy_policy):
+    prompt=f"""
+        **Instruction:**  
+    Analyze the provided business data privacy policy and determine its compliance with the guidelines of UK and European data privacy laws, including GDPR.  
+    
+    **Steps:**  
+    1. Identify areas where the policy aligns with UK and European data privacy laws.  
+    2. Highlight sections that lack compliance or are unclear.  
+    3. Provide detailed recommendations for improvement, citing specific legal guidelines (e.g., GDPR articles).  
+    4. Give recommendations and integrate them into the policy and generate an updated version.  
+    
+    **Input:**  
+    {privacy_policy}
+    
+    **Output:**  
+    - **Compliance Report:**  
+      - Aligned Sections: [List sections with detailed reasoning]  
+      - Non-compliant Sections: [List issues with specific recommendations and legal references]  
+    
+    - **Recommendations:**  
+      - [Detailed suggestions for each non-compliant section]  
+    
+    - **Revised Policy (if applicable):**  
+      [Generate updated privacy policy text]  
+        """
+    return prompt
+
 #######################################################################
 # colorama.init()
 # def type(words: str):
@@ -124,7 +151,7 @@ import matplotlib.pyplot as plt
 
 # Sample data
 
-selection=st.sidebar.selectbox("Select",("Dashboard","Cyber Awareness Chatbot","Malicious File Scanner","Education Portal"))
+selection=st.sidebar.selectbox("Select",("Dashboard","Cyber Awareness Chatbot","Malicious File Scanner","Education Portal","PolicyGuardian"))
 
 if selection=="Dashboard":
     st.subheader("Welcome to Dashboard")
@@ -474,7 +501,32 @@ if selection=="Education Portal":
             st.caption("Top 5 cloud security best practices checklist")
             st.video("https://youtu.be/ISkw0MwP2UA?si=AMiYkXKGdWTRc2zA")
         
-        
+if selection=="PolicyGuardian":
+    st.subheader("Welcome to Policy Guardian")
+    text=st.text_area("Here")
+    st.button("Analyze"):
+        res=llm.invoke(get_data_privacy_prompt(text))
+        st.write(res.content)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #https://youtu.be/hk-ZgRIYYXc?si=QPGmg7l0eU6FPvoL
 
 
