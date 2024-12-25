@@ -278,7 +278,7 @@ if selection=="Cyber Awareness Chatbot":
     st.subheader("Cyber Awareness Chatbot")
     query=st.text_input("Write Query Here")
     if st.button("Submit"):
-        res=llm.invoke(get_prompt(query)
+        res=llm.invoke(get_prompt(query))
         st.write(res.content)
 # if selection=="Malicious File Scanner":
 #     st.subheader("Malicious File Scanner")
