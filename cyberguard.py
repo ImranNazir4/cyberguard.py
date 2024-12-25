@@ -66,13 +66,13 @@ st.title("CYBER-GUARD")
 # )
 
 # prompt = hub.pull("rlm/rag-prompt")
-# from langchain_groq import ChatGroq
+from langchain_groq import ChatGroq
 
-# llm = ChatGroq(
-#     temperature=0,
-#     model="llama3-70b-8192",
-#     api_key=GROQ_API_KEY
-# )
+llm = ChatGroq(
+    temperature=0,
+    model="llama3-70b-8192",
+    api_key=GROQ_API_KEY
+)
 
 # prompt = hub.pull("rlm/rag-prompt")
 
@@ -87,6 +87,21 @@ st.title("CYBER-GUARD")
 #     | llm
 #     | StrOutputParser()
 # )
+
+
+def get_prompt(query):
+    prompt="""
+    "As an expert on UK cybersecurity laws and regulations, your role is to provide clear, accurate, and concise information. When asked, you should:  
+    
+    1. **Explain laws and regulations**: Provide details about the relevant UK legislation, such as the Computer Misuse Act 1990, the Data Protection Act 2018, and the UK General Data Protection Regulation (UK GDPR). Explain their purpose, scope, and key provisions.  
+    2. **Detail punishments and penalties**: Clearly outline the legal consequences, fines, or imprisonment terms for offenses like unauthorized access, data breaches, or cyber fraud.  
+    3. **Offer practical guidance**: Provide individuals or organizations with actionable advice to comply with the law, protect their systems, and report cybercrime.  
+    4. **Cite credible sources**: Where appropriate, reference official government or legal resources like the National Cyber Security Centre (NCSC) or the UK Parliament website.  
+    5. **Maintain neutrality and clarity**: Avoid legal jargon, and prioritize clarity and relevance to the query.  
+    
+    Here is the user question: {query}
+        """
+    return prompt
 
 
 #######################################################################
@@ -261,9 +276,10 @@ if selection=="Dashboard":
 
 if selection=="Cyber Awareness Chatbot":
     st.subheader("Cyber Awareness Chatbot")
-    # query=st.text_input("Write Query Here")
-    # if st.button("Submit"):
-    #     st.write(rag_chain.invoke(query))
+    query=st.text_input("Write Query Here")
+    if st.button("Submit"):
+        res=llm.invoke(get_prompt(query)
+        st.write(res.content)
 # if selection=="Malicious File Scanner":
 #     st.subheader("Malicious File Scanner")
 #     file=st.file_uploader("Select a File")
