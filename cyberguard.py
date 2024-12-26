@@ -708,7 +708,7 @@ if selection=="PolicyGuardian":
 def save_feedback(feedback):
     with open("user_feedback.txt", "a") as file:
         file.write(f"{datetime.now()} - {feedback}\n")
-        st.write("it is working")
+        # st.write("it is working")
         
 if selection=="Feedback":
     # fb_df=pd.read_csv("fb.csv")
