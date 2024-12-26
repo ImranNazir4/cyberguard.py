@@ -706,6 +706,7 @@ if selection=="PolicyGuardian":
 
         
 if selection=="Feedback":
+    st.subheader("Welcome")
     st.caption("We'd love to hear your thoughts! Your feedback helps us improve and provide a better experience. Please share your thoughts below — it only takes a moment!")
     st.write("Leave Feedback [Here](https://docs.google.com/forms/d/e/1FAIpQLSdVhC0PSPW-ZMToICfdvo3d4kFL4iF30quPKEfq2HK1xg5ksA/viewform?usp=sharing)")
     
