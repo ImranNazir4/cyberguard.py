@@ -613,6 +613,29 @@ if selection=="PolicyGuardian":
         res=llm.invoke(get_data_privacy_prompt(text))
         st.write(res.content)
         res=res.content
+        # Sample Llama response
+        llama_response = "This is the response from Llama. Copy this to your clipboard!"
+        
+        # Display the Llama response
+        st.text_area("Llama Response", llama_response, height=150, disabled=True)
+        
+        # Add a button to copy the response to clipboard
+        copy_code = f"""
+        <script>
+            function copyToClipboard(text) {{
+                navigator.clipboard.writeText(text).then(() => {{
+                    alert("Copied to clipboard!");
+                }}).catch(err => {{
+                    console.error("Could not copy text: ", err);
+                }});
+            }}
+        </script>
+        <button onclick="copyToClipboard(`{llama_response}`)" style="padding: 10px; font-size: 16px; cursor: pointer;">
+            Copy to Clipboard
+        </button>
+        """
+        
+        st.markdown(copy_code, unsafe_allow_html=True)
 
 
 
