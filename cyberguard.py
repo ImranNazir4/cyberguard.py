@@ -454,6 +454,7 @@ def get_scan_report(api_key, scan_id):
     # Check if the request was successful
     if response.status_code == 200:
         result = response.json()
+        return result
         # print("Scan Report:", result)
     else:
         st.write("Error:", response.status_code, response.text)
@@ -486,7 +487,9 @@ if selection=="Malicious File Scanner":
             # api_key = '607c93270c569faf4f4de638f16e1e4747bd3d5e6b034368c862afe4a999e7e4'
             # url_to_scan = 'https://pypi.org/project/streamlit-extras/'
             scan_id=scan_url(api, url)
-            st.write(scan_id)
+            st.write(get_scan_report(api, scan_id))
+
+            # st.write(scan_id)
 
 
 
