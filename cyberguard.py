@@ -443,21 +443,21 @@ def scan_file(api_key, file_path):
         # print("Error:", response.status_code, response.text)
         return None
 
-# def get_scan_report(api_key, scan_id):
-#     url = f'https://www.virustotal.com/api/v3/analyses/{scan_id}'
-#     headers = {
-#         'x-apikey': api_key
-#     }
+def get_file_scan_report(api_key, scan_id):
+    url = f'https://www.virustotal.com/api/v3/analyses/{scan_id}'
+    headers = {
+        'x-apikey': api_key
+    }
 
-#     response = requests.get(url, headers=headers)
+    response = requests.get(url, headers=headers)
     
-#     if response.status_code == 200:
-#         result = response.json()
-#         print("Scan report retrieved successfully.")
-#         return result
-#     else:
-#         print("Error:", response.status_code, response.text)
-#         return None
+    if response.status_code == 200:
+        result = response.json()
+        # print("Scan report retrieved successfully.")
+        return result
+    else:
+        # print("Error:", response.status_code, response.text)
+        return None
 
 # if __name__ == "__main__":
 #     api_key = 'YOUR_API_KEY'
@@ -493,7 +493,7 @@ def scan_url(api_key, url):
     else:
         write("Error:", response.status_code, response.text)
 
-def get_scan_report(api_key, scan_id):
+def get_url_scan_report(api_key, scan_id):
     # Define the endpoint for retrieving scan reports
     url_report_endpoint = "https://www.virustotal.com/vtapi/v2/url/report"
     
@@ -518,7 +518,8 @@ if selection=="Malicious File Scanner":
         file=st.file_uploader("Select a File")
         if file!=None and st.button("Analyze"): 
             scan_id = scan_file(api, file.name)
-            st.write(scan_id)
+            report = get_file_scan_report(api, scan_id)
+            st.write(report)
 
             
             # with open(file.name, mode='wb') as w:
@@ -543,7 +544,7 @@ if selection=="Malicious File Scanner":
             # api_key = '607c93270c569faf4f4de638f16e1e4747bd3d5e6b034368c862afe4a999e7e4'
             # url_to_scan = 'https://pypi.org/project/streamlit-extras/'
             scan_id=scan_url(api, url)
-            st.write(get_scan_report(api, scan_id))
+            st.write(get_url_scan_report(api, scan_id))
 
             # st.write(scan_id)
 
