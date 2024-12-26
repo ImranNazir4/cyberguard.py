@@ -707,7 +707,7 @@ if selection=="Feebback":
     if st.button("Submit"):
         # Get current date and time
         current_datetime = datetime.now()
-        temp=pd.DataFrame({"feedback":fb,"time":current_datetime)
+        temp=pd.DataFrame({"feedback":fb,"time":current_datetime})
         pd.concat([fb_df,df],axis=0).to_csv("fb.csv",index=False)
         st.balloons()
 
