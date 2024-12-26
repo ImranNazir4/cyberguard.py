@@ -312,7 +312,7 @@ if selection=="NCA CrimeAssist":
     st.html("<h4>For General enquiries</h4>")
     st.write("Reach us via [email](communication@nca.gov.uk)")
     st.write("Telephone: 0370 496 7622 (available 24/7)")
-    st.cation("This number is not used for outgoing calls.")
+    st.caption("This number is not used for outgoing calls.")
     st.write("The postal address for NCA headquarters is:")
     st.write("PO Box 8000")
     st.write("London")
