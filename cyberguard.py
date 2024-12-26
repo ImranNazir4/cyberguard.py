@@ -702,7 +702,7 @@ if selection=="PolicyGuardian":
     
 # # st.markdown("Test your Knowledge" %url)
 fb_df=pd.read_csv("fb.csv")     
-if selection=="Feebback":
+if selection=="Feedback":
     fb=st.text_area("Help us to Improve Here")
     if st.button("Submit"):
         # Get current date and time
