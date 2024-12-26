@@ -344,10 +344,10 @@ if selection=="NCA CrimeAssist":
     st.write("Visit Offical [NCA](https://www.nationalcrimeagency.gov.uk/) Website")
 
     st.subheader("Contact us at Social Media")
-            social_media_links = [
-                "https://web.facebook.com/sharer.php?u=https%3A%2F%2Fwww.nationalcrimeagency.gov.uk%2Fcontact-us&_rdc=1&_rdr#",
-                "https://twitter.com/intent/tweet?text=https%3A%2F%2Fwww.nationalcrimeagency.gov.uk%2Fcontact-us"
-            ]
+    social_media_links = [
+        "https://web.facebook.com/sharer.php?u=https%3A%2F%2Fwww.nationalcrimeagency.gov.uk%2Fcontact-us&_rdc=1&_rdr#",
+        "https://twitter.com/intent/tweet?text=https%3A%2F%2Fwww.nationalcrimeagency.gov.uk%2Fcontact-us"
+    ]
         
         social_media_icons = SocialMediaIcons(social_media_links)
         social_media_icons.render()
