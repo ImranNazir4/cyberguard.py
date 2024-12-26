@@ -608,6 +608,7 @@ if selection=="Education Portal":
 if selection=="PolicyGuardian":
     st.subheader("Welcome to Policy Guardian")
     text=st.text_area("Here")
+    res=""
     if st.button("Analyze"):
         res=llm.invoke(get_data_privacy_prompt(text))
         st.write(res.content)
