@@ -614,21 +614,21 @@ if selection=="PolicyGuardian":
         st.write(res.content)
         res=res.content
         # Button to save the response
-    if res!="":
-        if st.button("Save to Markdown"):
-            filename = "LLaMA_Response.md"
-            save_to_markdown(res, filename)
-            st.success(f"Markdown file saved as {filename}")
-            
-            # Provide a download link
-            with open(filename, "r") as file:
-                btn = st.download_button(
-                    label="Download Markdown File",
-                    data=file.read(),
-                    file_name=filename,
-                    mime="text/markdown"
-                )
-        else:
+        if res!="":
+            if st.button("Save to Markdown"):
+                filename = "LLaMA_Response.md"
+                save_to_markdown(res, filename)
+                st.success(f"Markdown file saved as {filename}")
+                
+                # Provide a download link
+                with open(filename, "r") as file:
+                    btn = st.download_button(
+                        label="Download Markdown File",
+                        data=file.read(),
+                        file_name=filename,
+                        mime="text/markdown"
+                    )
+            else:
             st.error("Please enter a response before saving.")
 
 
