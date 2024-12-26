@@ -349,8 +349,8 @@ if selection=="NCA CrimeAssist":
         "https://twitter.com/intent/tweet?text=https%3A%2F%2Fwww.nationalcrimeagency.gov.uk%2Fcontact-us"
     ]
         
-        social_media_icons = SocialMediaIcons(social_media_links)
-        social_media_icons.render()
+    social_media_icons = SocialMediaIcons(social_media_links)
+    social_media_icons.render()
 
 
     
