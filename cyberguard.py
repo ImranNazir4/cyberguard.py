@@ -326,8 +326,8 @@ if selection=="NCA CrimeAssist":
     
     social_media_icons.render()
 
-Scam alert: fake letters and emails
-to report@phishing.gov.uk or contact Action Fraud at www.actionfraud.police.uk / 0300 123 2040.
+# Scam alert: fake letters and emails
+# to report@phishing.gov.uk or contact Action Fraud at www.actionfraud.police.uk / 0300 123 2040.
 
 
 
@@ -335,30 +335,30 @@ to report@phishing.gov.uk or contact Action Fraud at www.actionfraud.police.uk /
 
 
 
-General enquiries
-For general enquiries or to verify a person as an NCA officer:
+# General enquiries
+# For general enquiries or to verify a person as an NCA officer:
 
-Email: communication@nca.gov.uk
+# Email: communication@nca.gov.uk
 
-This inbox is actively monitored but receives a high volume of enquiries. Please allow up to 7 working days for a reply before re-contacting it. Do not send images unless requested by an officer.
+# This inbox is actively monitored but receives a high volume of enquiries. Please allow up to 7 working days for a reply before re-contacting it. Do not send images unless requested by an officer.
 
-Telephone: 0370 496 7622 (available 24/7)
+# Telephone: 0370 496 7622 (available 24/7)
 
-This number is not used for outgoing calls.
+# This number is not used for outgoing calls.
 
-The postal address for NCA headquarters is:
+# The postal address for NCA headquarters is:
 
-PO Box 8000
-London
-SE11 5EN
+# PO Box 8000
+# London
+# SE11 5EN
 
 
 
-    Stay SAFE
-Suspect anything or anyone you don’t know – no matter what or who they claim to be
-Ask questions. Whatever a fraudster tries, you have the power to stay in control
-Find out for certain who you are dealing with. Challenge anything that seems suspect
-End a situation if you feel uncomfortable. If you feel threatened call your local police on 101 or 999
+#     Stay SAFE
+# Suspect anything or anyone you don’t know – no matter what or who they claim to be
+# Ask questions. Whatever a fraudster tries, you have the power to stay in control
+# Find out for certain who you are dealing with. Challenge anything that seems suspect
+# End a situation if you feel uncomfortable. If you feel threatened call your local police on 101 or 999
 
 
 
