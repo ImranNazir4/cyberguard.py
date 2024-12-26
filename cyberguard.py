@@ -419,6 +419,44 @@ if selection=="Cyber Awareness Chatbot":
     if st.button("Submit"):
         res=llm.invoke(get_prompt(query))
         st.write(res.content)
+
+############################################################################################################################################################
+
+def scan_url(api_key, url):
+    # Define the endpoint for URL scanning
+    url_scan_endpoint = "https://www.virustotal.com/vtapi/v2/url/scan"
+    
+    # Define the parameters for the request
+    params = {'apikey': api_key, 'url': url}
+    
+    # Make the request to VirusTotal
+    response = requests.post(url_scan_endpoint, data=params)
+    
+    # Check if the request was successful
+    if response.status_code == 200:
+        result = response.json()
+        print("Scan ID:", result.get('scan_id'))
+        print("Verbose Message:", result.get('verbose_msg'))
+    else:
+        print("Error:", response.status_code, response.text)
+
+def get_scan_report(api_key, scan_id):
+    # Define the endpoint for retrieving scan reports
+    url_report_endpoint = "https://www.virustotal.com/vtapi/v2/url/report"
+    
+    # Define the parameters for the request
+    params = {'apikey': api_key, 'resource': scan_id}
+    
+    # Make the request to VirusTotal
+    response = requests.get(url_report_endpoint, params=params)
+    
+    # Check if the request was successful
+    if response.status_code == 200:
+        result = response.json()
+        print("Scan Report:", result)
+    else:
+        print("Error:", response.status_code, response.text)
+
 if selection=="Malicious File Scanner":
     selected_option=st.selectbox("Select",("File Scanner", "URL Scanner"))
     if selected_option=="File Scanner":
@@ -427,7 +465,6 @@ if selection=="Malicious File Scanner":
         if file!=None and st.button("Analyze"):     
             with open(file.name, mode='wb') as w:
                     w.write(file.getvalue())
-        
             file_to_upload = {"file": open(file.name, "rb")}
             response = requests.post(url,files = file_to_upload , params=params)
             file_url = f"https://www.virustotal.com/api/v3/files/{(response.json())['sha1']}"
@@ -438,6 +475,49 @@ if selection=="Malicious File Scanner":
             report = json.loads(report)
             # json_string = json.dumps(report)
             st.write(response)
+    
+    if selected_option=="URL Scanner":
+        st.subheader("Malicious URL Scanner")
+        url=st.text_input("Paste URL Here")
+        # Replace 'your_api_key' with your actual VirusTotal API key
+        # api
+        # api_key = '607c93270c569faf4f4de638f16e1e4747bd3d5e6b034368c862afe4a999e7e4'
+        # url_to_scan = 'https://pypi.org/project/streamlit-extras/'
+        scan_id=scan_url(api, url)
+        st.write(scan_id)
+
+
+
+
+
+
+
+
+
+
+
+
+
+# # Scan the URL
+# scan_url(api_key, url_to_scan)
+
+# # Optionally, you can retrieve the scan report using the scan ID
+# # scan_id = 'your_scan_id'
+# # get_scan_report(api_key, scan_id)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # https://youtu.be/Yr0xPVFcf-U?si=xNHedIZgSQbUc9f_
