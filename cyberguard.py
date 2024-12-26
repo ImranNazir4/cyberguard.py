@@ -318,9 +318,9 @@ if selection=="NCA CrimeAssist":
 
     with col2:
         st.html("<h4>For General enquiries</h4>")
-        st.write("Reach us via [email](communication@nca.gov.uk) or Telephone: 0370 496 7622 (available 24/7)")
+        st.write("Reach us via [email](communication@nca.gov.uk) or Telephone: 0370 496 7622 (available 24/7) not used for outgoing calls")
         # st.write("")
-        # st.caption("This number is not used for outgoing calls.")
+        # st.caption("This number is .")
     
     st.write("The postal address for NCA headquarters is:")
     st.write("PO Box 8000")
