@@ -633,7 +633,7 @@ if selection=="PolicyGuardian":
             mime="text/markdown"
         )
             
-        st.markdown(copy_code, unsafe_allow_html=True)
+        # st.markdown(copy_code, unsafe_allow_html=True)
     
     
 
