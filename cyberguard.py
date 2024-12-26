@@ -710,7 +710,7 @@ if selection=="Feedback":
         temp=pd.DataFrame({"feedback":fb,"time":current_datetime},index=[0])
         temp.columns=["feedback","time"]
         df=pd.concat([fb_df,temp],axis=0)
-        st.write(fb_df)
+        st.write(df)
         df.to_csv("fb.csv",index=False)
         st.balloons()
 
