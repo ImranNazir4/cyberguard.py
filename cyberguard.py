@@ -1,7 +1,8 @@
+import streamlit as st
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 import seaborn as sns
-import streamlit as st
 import requests
 import json
 import sys
@@ -29,6 +30,7 @@ from langchain_core.output_parsers import StrOutputParser
 from st_social_media_links import SocialMediaIcons
 # from docx import Document
 # from streamlit_extras.copy_to_clipboard import copy_to_clipboard
+
 
 
 
@@ -161,24 +163,19 @@ def get_data_privacy_prompt(privacy_policy):
     return prompt
 
 #######################################################################
-# colorama.init()
-# def type(words: str):
-#     for char in words:
-#         sleep(0.015)
-#         sys.stdout.write(char)
-#         sys.stdout.flush()
-#     # print()
+colorama.init()
+def type(words: str):
+    for char in words:
+        sleep(0.015)
+        sys.stdout.write(char)
+        sys.stdout.flush()
+    # print()
 
-# url = r'https://www.virustotal.com/vtapi/v2/file/scan'
-# api= os.getenv("VT_API_KEY")
+url = r'https://www.virustotal.com/vtapi/v2/file/scan'
+api= os.getenv("VT_API_KEY")
 #######################################################################
 
 
-import streamlit as st
-import pandas as pd
-import matplotlib.pyplot as plt
-
-# Sample data
 
 
 
