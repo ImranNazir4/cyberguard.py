@@ -701,19 +701,30 @@ if selection=="PolicyGuardian":
 #     st.write("Test Your Cyber Knowledge [Here](https://docs.google.com/forms/d/e/1FAIpQLSeRVC8WVGSqDHN5B9_kX18RbRnS0gOFyMbKYZFqzBSGyP5rLA/viewform?usp=header)")
     
 # # st.markdown("Test your Knowledge" %url)
-     
+
+
+
+# Function to save user feedback to a text file
+def save_feedback(feedback):
+    with open("user_feedback.txt", "a") as file:
+        file.write(f"{datetime.now()} - {feedback}\n")
+        
 if selection=="Feedback":
-    fb_df=pd.read_csv("fb.csv")
+    # fb_df=pd.read_csv("fb.csv")
     fb=st.text_area("Help us to Improve Here")
     if st.button("Submit"):
-        # Get current date and time
-        current_datetime = datetime.now()
-        temp=pd.DataFrame({"feedback":fb,"time":current_datetime},index=[0])
-        temp.columns=["feedback","time"]
-        df=pd.concat([fb_df,temp],axis=0)
-        st.write(fb_df)
-        df.to_csv("fb.csv",index=False)
-        st.balloons()
+        save_feedback(user_feedback)
+        st.success("Thank you for your feedback!")
+    else:
+        st.error("Please enter some feedback before submitting.")
+        # # Get current date and time
+        # current_datetime = datetime.now()
+        # temp=pd.DataFrame({"feedback":fb,"time":current_datetime},index=[0])
+        # temp.columns=["feedback","time"]
+        # df=pd.concat([fb_df,temp],axis=0)
+        # st.write(fb_df)
+        # df.to_csv("fb.csv",index=False)
+        # st.balloons()
 
 
     
