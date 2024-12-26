@@ -613,28 +613,26 @@ if selection=="PolicyGuardian":
         res=llm.invoke(get_data_privacy_prompt(text))
         st.write(res.content)
         res=res.content
-        # Sample Llama response
-        llama_response = "This is the response from Llama. Copy this to your clipboard!"
         
-        # Display the Llama response
-        st.text_area("Llama Response", llama_response, height=150, disabled=True)
+        import streamlit as st
+
+    # Sample Llama response
+    llama_response = "This is the response from Llama. Copy this to your clipboard!"
+    
+    # Create a button to save and download the response
+    if st.button("Save and Download Markdown File"):
+        # Generate the Markdown file content
+        file_name = "Llama_response.md"
+        markdown_content = f"# Llama Response\n\n{llama_response}"
         
-        # Add a button to copy the response to clipboard
-        copy_code = f"""
-        <script>
-            function copyToClipboard(text) {{
-                navigator.clipboard.writeText(text).then(() => {{
-                    alert("Copied to clipboard!");
-                }}).catch(err => {{
-                    console.error("Could not copy text: ", err);
-                }});
-            }}
-        </script>
-        <button onclick="copyToClipboard(`{llama_response}`)" style="padding: 10px; font-size: 16px; cursor: pointer;">
-            Copy to Clipboard
-        </button>
-        """
-        
+        # Use Streamlit's `st.download_button` to allow downloading the file
+        st.download_button(
+            label="Download Markdown File",
+            data=markdown_content,
+            file_name=file_name,
+            mime="text/markdown"
+        )
+            
         st.markdown(copy_code, unsafe_allow_html=True)
 
 
