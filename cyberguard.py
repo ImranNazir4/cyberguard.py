@@ -711,23 +711,8 @@ def save_feedback(feedback):
         # st.write("it is working")
         
 if selection=="Feedback":
-    # fb_df=pd.read_csv("fb.csv")
-    fb=st.text_area("Help us to Improve Here")
-    if st.button("Submit"):
-        st.write("Leave Feedback [Here](https://docs.google.com/forms/d/e/1FAIpQLSdVhC0PSPW-ZMToICfdvo3d4kFL4iF30quPKEfq2HK1xg5ksA/viewform?usp=sharing)")
-    #     save_feedback(fb)
-    #     st.success("Thank you for your feedback!")
-    # else:
-    #     st.error("Please enter some feedback before submitting.")
-        # # Get current date and time
-        # current_datetime = datetime.now()
-        # temp=pd.DataFrame({"feedback":fb,"time":current_datetime},index=[0])
-        # temp.columns=["feedback","time"]
-        # df=pd.concat([fb_df,temp],axis=0)
-        # st.write(fb_df)
-        # df.to_csv("fb.csv",index=False)
-        # st.balloons()
-
+    st.write("Leave Feedback [Here](https://docs.google.com/forms/d/e/1FAIpQLSdVhC0PSPW-ZMToICfdvo3d4kFL4iF30quPKEfq2HK1xg5ksA/viewform?usp=sharing)")
+    
 
     
     
