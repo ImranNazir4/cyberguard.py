@@ -709,7 +709,7 @@ if selection=="Feedback":
         current_datetime = datetime.now()
         temp=pd.DataFrame({"feedback":fb,"time":current_datetime}.items())
         temp.columns=["feedback","time"]
-        pd.concat([fb_df,df],axis=0).to_csv("fb.csv",index=False)
+        pd.concat([fb_df,temp],axis=0).to_csv("fb.csv",index=False)
         st.balloons()
 
 
