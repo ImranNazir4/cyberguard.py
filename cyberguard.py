@@ -613,19 +613,21 @@ if selection=="PolicyGuardian":
         res=llm.invoke(get_data_privacy_prompt(text))
         st.write(res.content)
         res=res.content
-        # if res!="" and st.button("Save and Download Markdown File"):
+    if res!="": 
+        # and st.button("Save and Download Markdown File"):
         # Generate the Markdown file content
         file_name = "PolicyGuardian_response.md"
         markdown_content = f"# PolicyGuardian Response\n\n{res}"
         
-        # Use Streamlit's `st.download_button` to allow downloading the file
-        st.download_button(
-            label="Download Markdown File",
-            data=markdown_content,
-            file_name=file_name,
-            mime="text/markdown"
-        )
-            
+    # Use Streamlit's `st.download_button` to allow downloading the file
+    st.download_button(
+        label="Download Markdown File",
+        data=markdown_content,
+        file_name=file_name,
+        mime="text/markdown"
+    )
+    st.success("Downloading Mardown File")
+        
             # st.markdown(copy_code, unsafe_allow_html=True)
     
     
