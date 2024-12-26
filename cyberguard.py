@@ -28,7 +28,7 @@ from langchain_core.runnables import RunnableParallel, RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 from st_social_media_links import SocialMediaIcons
 # from docx import Document
-from streamlit_extras.copy_to_clipboard import copy_to_clipboard
+# from streamlit_extras.copy_to_clipboard import copy_to_clipboard
 
 
 
@@ -613,13 +613,20 @@ if selection=="PolicyGuardian":
         res=llm.invoke(get_data_privacy_prompt(text))
         st.write(res.content)
         res=res.content
-        st.title("Copy Icon Example")
 
-        # Text to copy
-        text_to_copy = "This is the text to copy!"
+         # Add a copy button using JavaScript
+        st.markdown(f"""
+        <button onclick="navigator.clipboard.writeText('{res}')">
+            📋 Copy
+        </button>
+        """, unsafe_allow_html=True)
+        # st.title("Copy Icon Example")
+
+        # # Text to copy
+        # text_to_copy = "This is the text to copy!"
     
-        # Add the copy-to-clipboard feature
-        copy_to_clipboard(res, "📋 Copy")
+        # # Add the copy-to-clipboard feature
+        # copy_to_clipboard(res, "📋 Copy")
 
 
 
