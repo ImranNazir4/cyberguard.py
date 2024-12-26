@@ -27,6 +27,7 @@ from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.runnables import RunnableParallel, RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 from st_social_media_links import SocialMediaIcons
+# from docx import Document
 
 
 
@@ -90,6 +91,19 @@ llm = ChatGroq(
 #     | StrOutputParser()
 # )
 
+
+
+# # Function to save content to a Word document
+# def save_to_word(content, filename):
+#     # Create a new Document
+#     doc = Document()
+    
+#     # Add content to the document
+#     doc.add_heading('PolicyGuardian Response', level=1)
+#     doc.add_paragraph(content)
+    
+#     # Save the document
+#     doc.save(filename)
 
 def get_prompt(query):
     prompt=f"""
