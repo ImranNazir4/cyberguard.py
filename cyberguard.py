@@ -463,7 +463,7 @@ def scan_file(api_key, file_path):
 #     api_key = 'YOUR_API_KEY'
 #     file_path = 'path_to_your_file'
 
-    scan_id = scan_file(api_key, file_path)
+    # scan_id = scan_file(api_key, file_path)
     # if scan_id:
     #     report = get_scan_report(api_key, scan_id)
     #     if report:
@@ -517,7 +517,7 @@ if selection=="Malicious File Scanner":
         st.subheader("Malicious File Scanner")
         file=st.file_uploader("Select a File")
         if file!=None and st.button("Analyze"): 
-            scan_id = scan_file(api_key, file.name)
+            scan_id = scan_file(api, file.name)
             st.write(scan_id)
 
             
