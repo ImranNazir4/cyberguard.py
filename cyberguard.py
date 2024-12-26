@@ -151,7 +151,7 @@ import matplotlib.pyplot as plt
 
 # Sample data
 
-selection=st.sidebar.selectbox("Select",("Dashboard","Cyber Awareness Chatbot","Malicious File Scanner","Education Portal","PolicyGuardian"))
+selection=st.sidebar.selectbox("Select",("Dashboard","NCA CrimeAssist","Cyber Awareness Chatbot","Malicious File Scanner","Education Portal","PolicyGuardian"))
 
 if selection=="Dashboard":
     st.subheader("Welcome to Dashboard")
@@ -300,7 +300,8 @@ if selection=="Dashboard":
 
 
 
-
+if selection=="NCA CrimeAssist":
+    st.subheader("Welcome to National Crime Agency Crime Assistant")
 if selection=="Cyber Awareness Chatbot":
     st.subheader("Cyber Awareness Chatbot")
     query=st.text_input("Write Query Here")
