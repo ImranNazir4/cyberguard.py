@@ -305,14 +305,66 @@ if selection=="NCA CrimeAssist":
     st.html("<h4>Report an urgent crime</h4>")
     st.write("In an emergency always call 999")
     st.html("<h4>Report non-urgent crime</h4>")
-    st.html("<h4>RReport non-urgent crime</h4>")
-    st.write("Please call your local police on 101")
+        st.write("Please call your local police on 101")
     st.html("<h4>Report a crime anonymously</h4>")
     st.write("You can also report crime anonymously to [Crimestoppers](https://crimestoppers-uk.org/give-information/forms/give-information-anonymously) online or by calling 0800 555 111")
  
     
     st.subheader("About")
     st.caption("The National Crime Agency (NCA) is a national law enforcement agency in the United Kingdom. It is the UK's lead agency against organised crime; human, weapon and drug trafficking; cybercrime; and economic crime that goes across regional and international borders, but it can be tasked to investigate any crime.")
+    # import streamlit as st
+    from st_social_media_links import SocialMediaIcons
+    
+    social_media_links = [
+        "https://web.facebook.com/sharer.php?u=https%3A%2F%2Fwww.nationalcrimeagency.gov.uk%2Fcontact-us&_rdc=1&_rdr#",
+        "https://twitter.com/intent/tweet?text=https%3A%2F%2Fwww.nationalcrimeagency.gov.uk%2Fcontact-us",
+        "communication@nca.gov.uk",
+        "https://www.github.com/jlnetosci/st-social-media-links",
+    ]
+    
+    social_media_icons = SocialMediaIcons(social_media_links)
+    
+    social_media_icons.render()
+
+Scam alert: fake letters and emails
+to report@phishing.gov.uk or contact Action Fraud at www.actionfraud.police.uk / 0300 123 2040.
+
+
+
+
+
+
+
+General enquiries
+For general enquiries or to verify a person as an NCA officer:
+
+Email: communication@nca.gov.uk
+
+This inbox is actively monitored but receives a high volume of enquiries. Please allow up to 7 working days for a reply before re-contacting it. Do not send images unless requested by an officer.
+
+Telephone: 0370 496 7622 (available 24/7)
+
+This number is not used for outgoing calls.
+
+The postal address for NCA headquarters is:
+
+PO Box 8000
+London
+SE11 5EN
+
+
+
+    Stay SAFE
+Suspect anything or anyone you don’t know – no matter what or who they claim to be
+Ask questions. Whatever a fraudster tries, you have the power to stay in control
+Find out for certain who you are dealing with. Challenge anything that seems suspect
+End a situation if you feel uncomfortable. If you feel threatened call your local police on 101 or 999
+
+
+
+
+
+
 if selection=="Cyber Awareness Chatbot":
     st.subheader("Cyber Awareness Chatbot")
     query=st.text_input("Write Query Here")
