@@ -421,28 +421,28 @@ if selection=="Cyber Awareness Chatbot":
     if st.button("Submit"):
         res=llm.invoke(get_prompt(query))
         st.write(res.content)
-# if selection=="Malicious File Scanner":
-#     st.subheader("Malicious File Scanner")
-#     file=st.file_uploader("Select a File")
-#     if file!=None and st.button("Analyze"):     
-#         with open(file.name, mode='wb') as w:
-#                 w.write(file.getvalue())
+if selection=="Malicious File Scanner":
+    st.subheader("Malicious File Scanner")
+    file=st.file_uploader("Select a File")
+    if file!=None and st.button("Analyze"):     
+        with open(file.name, mode='wb') as w:
+                w.write(file.getvalue())
         
-#         file_to_upload = {"file": open(file.name, "rb")}
+        file_to_upload = {"file": open(file.name, "rb")}
         
-#         response = requests.post(url,files = file_to_upload , params=params)
-#         file_url = f"https://www.virustotal.com/api/v3/files/{(response.json())['sha1']}"
+        response = requests.post(url,files = file_to_upload , params=params)
+        file_url = f"https://www.virustotal.com/api/v3/files/{(response.json())['sha1']}"
         
-#         headers = {"accept": "application/json", "x-apikey": api}
-#         type(colorama.Fore.YELLOW + "Analysing....")
+        headers = {"accept": "application/json", "x-apikey": api}
+        type(colorama.Fore.YELLOW + "Analysing....")
         
-#         response = requests.get(file_url,headers=headers)
+        response = requests.get(file_url,headers=headers)
         
-#         report = response.text
-#         report = json.loads(report)
-#         # json_string = json.dumps(report)
+        report = response.text
+        report = json.loads(report)
+        # json_string = json.dumps(report)
         
-#         st.write(response)
+        st.write(response)
 
 
 # https://youtu.be/Yr0xPVFcf-U?si=xNHedIZgSQbUc9f_
