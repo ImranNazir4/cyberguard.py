@@ -302,10 +302,12 @@ if selection=="Dashboard":
 
 if selection=="NCA CrimeAssist":
     st.subheader("Welcome to National Crime Agency Crime Assistant")
-    st.write("Report an urgent crime")
+    st.html("<h4>Report an urgent crime</h4>")
     st.write("In an emergency always call 999")
-    st.write("Report non-urgent crime")
+    st.html("<h4>Report non-urgent crime</h4>")
+    st.html("<h4>RReport non-urgent crime</h4>")
     st.write("Please call your local police on 101")
+    st.html("<h4>Report a crime anonymously</h4>")
     st.write("You can also report crime anonymously to [Crimestoppers](https://crimestoppers-uk.org/give-information/forms/give-information-anonymously) online or by calling 0800 555 111")
  
     
@@ -411,8 +413,7 @@ if selection=="Education Portal":
             st.video("https://youtu.be/ZcQzqdnkKvk?si=g5O2DzZG-Z4HNhCu")
 
 
-    st.html(
-    "<h4>Essentials</h4>")
+    st.html("<h4>Essentials</h4>")
 
 #How to create a strong password?
 # https://youtu.be/TvrFpAFitQ0?si=wiz21Gn_w94sH5F9
