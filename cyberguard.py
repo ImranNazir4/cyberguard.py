@@ -435,10 +435,11 @@ def scan_url(api_key, url):
     # Check if the request was successful
     if response.status_code == 200:
         result = response.json()
-        print("Scan ID:", result.get('scan_id'))
-        print("Verbose Message:", result.get('verbose_msg'))
+        return result.get('scan_id')
+        # print("Scan ID:", result.get('scan_id'))
+        # print("Verbose Message:", result.get('verbose_msg'))
     else:
-        print("Error:", response.status_code, response.text)
+        write("Error:", response.status_code, response.text)
 
 def get_scan_report(api_key, scan_id):
     # Define the endpoint for retrieving scan reports
