@@ -302,13 +302,10 @@ if selection=="Dashboard":
 
 if selection=="NCA CrimeAssist":
     st.subheader("Welcome to National Crime Agency Crime Assistant")
-    col1,col2=st.columns(2)
-    with col1:
-        st.subheader("Report an urgent crime")
-        st.write("In an emergency always call 999")
-    with col2:
-        st.subheader("Report non-urgent crime")
-        st.write("Please call your local police on 101")
+    st.write("Report an urgent crime")
+    st.write("In an emergency always call 999")
+    st.write("Report non-urgent crime")
+    st.write("Please call your local police on 101")
     st.write("You can also report crime anonymously to [Crimestoppers](https://crimestoppers-uk.org/give-information/forms/give-information-anonymously) online or by calling 0800 555 111")
  
     
