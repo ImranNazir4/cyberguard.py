@@ -613,17 +613,10 @@ if selection=="PolicyGuardian":
         res=llm.invoke(get_data_privacy_prompt(text))
         st.write(res.content)
         res=res.content
-        
-        import streamlit as st
-
-    # Sample Llama response
-    llama_response = "This is the response from Llama. Copy this to your clipboard!"
-    
-    # Create a button to save and download the response
-    if st.button("Save and Download Markdown File"):
+    if res!="" and st.button("Save and Download Markdown File"):
         # Generate the Markdown file content
-        file_name = "Llama_response.md"
-        markdown_content = f"# Llama Response\n\n{llama_response}"
+        file_name = "PolicyGuardian_response.md"
+        markdown_content = f"# PolicyGuardian Response\n\n{res}"
         
         # Use Streamlit's `st.download_button` to allow downloading the file
         st.download_button(
