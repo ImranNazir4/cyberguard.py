@@ -16,3 +16,4 @@ langchain-groq
 transformers
 colorama
 st-social-media-links
+streamlit-extras
