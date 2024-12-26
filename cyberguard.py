@@ -422,15 +422,16 @@ if selection=="Cyber Awareness Chatbot":
 if selection=="Malicious File Scanner":
     st.subheader("Malicious File Scanner")
     file=st.file_uploader("Select a File")
-    if file!=None and st.button("Analyze"):     
+    selected_option=st.select_box("Select",("File Scanner", "URL Scanner")
+                                  
+    if selected_option=="File Scanner":
+      if file!=None and st.button("Analyze"):     
         with open(file.name, mode='wb') as w:
                 w.write(file.getvalue())
         
         file_to_upload = {"file": open(file.name, "rb")}
-        
         response = requests.post(url,files = file_to_upload , params=params)
         file_url = f"https://www.virustotal.com/api/v3/files/{(response.json())['sha1']}"
-        
         headers = {"accept": "application/json", "x-apikey": api}
         type(colorama.Fore.YELLOW + "Analysing....")
         
