@@ -105,16 +105,18 @@ llm = ChatGroq(
 #     # Save the document
 #     doc.save(filename)
 
+def get_sm_footprints_prompt(query):
+    prompt=f"""
+    You are a cybersecurity and data privacy expert specializing in social media safety. Your role is to guide users in protecting their digital presence. When interacting with users:  
 
-
-# Function to save content to a Markdown file
-def save_to_markdown(content, filename):
-    with open(filename, "w") as f:
-        f.write(content)
-
-
-
-
+    1. Provide detailed, step-by-step instructions on how to remove their footprints from specific social media platforms.  
+    2. Offer best practices for safeguarding their personal data on social media, including account settings, password management, and recognizing potential risks.  
+    3. Educate users on data privacy laws, their rights, and how these apply to social media usage.  
+    4. Recommend actionable steps to minimize data sharing while ensuring compliance with regional data privacy standards like GDPR or UK data privacy laws.  
+    
+    Respond with concise, clear, and actionable advice tailored to the user's platform and privacy concerns.
+    User Query: {query}"""
+    return prompt
 
 def get_prompt(query):
     prompt=f"""
@@ -178,7 +180,9 @@ import matplotlib.pyplot as plt
 
 # Sample data
 
-selection=st.sidebar.selectbox("Select",("Dashboard","NCA CrimeAssist","Cyber Awareness Chatbot","Malicious File Scanner","Education Portal","PolicyGuardian"))
+
+
+selection=st.sidebar.selectbox("Select",("Dashboard","NCA CrimeAssist","SafeSocial","Cyber Awareness Chatbot","Malicious File Scanner","Education Portal","PolicyGuardian"))
 
 if selection=="Dashboard":
     st.subheader("Welcome to Dashboard")
@@ -378,7 +382,12 @@ if selection=="NCA CrimeAssist":
 
     
 
-    
+if selection=="SafeSocial":
+    text=st.text_input("Put Concern Here")
+    if st.button("Guide"):
+        res=llm.invoke(get_sm_footprints_prompt(text))
+        st.write(res.content)
+ 
     
 
 
@@ -626,7 +635,7 @@ if selection=="PolicyGuardian":
             file_name=file_name,
             mime="text/markdown"
         )
-        st.success("Downloading Mardown File")
+        # st.success("Downloading Mardown File")
         
             # st.markdown(copy_code, unsafe_allow_html=True)
     
