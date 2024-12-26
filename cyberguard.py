@@ -707,7 +707,7 @@ if selection=="Feedback":
     if st.button("Submit"):
         # Get current date and time
         current_datetime = datetime.now()
-        temp=pd.DataFrame({"feedback":fb,"time":current_datetime}.items())
+        temp=pd.DataFrame({"feedback":fb,"time":current_datetime},index=[0])
         temp.columns=["feedback","time"]
         df=pd.concat([fb_df,temp],axis=0)
         st.write(df)
