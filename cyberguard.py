@@ -614,26 +614,6 @@ if selection=="PolicyGuardian":
         st.write(res.content)
         res=res.content
 
-         # Add a copy button using JavaScript
-        st.markdown(f"""
-        <button onclick="navigator.clipboard.writeText('{res}')">
-            📋 Copy
-        </button>
-        """, unsafe_allow_html=True)
-        # st.title("Copy Icon Example")
-
-        # # Text to copy
-        # text_to_copy = "This is the text to copy!"
-    
-        # # Add the copy-to-clipboard feature
-        # copy_to_clipboard(res, "📋 Copy")
-
-
-
-
-
-
-
 
 
 
