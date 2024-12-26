@@ -454,9 +454,9 @@ def get_scan_report(api_key, scan_id):
     # Check if the request was successful
     if response.status_code == 200:
         result = response.json()
-        print("Scan Report:", result)
+        # print("Scan Report:", result)
     else:
-        print("Error:", response.status_code, response.text)
+        st.write("Error:", response.status_code, response.text)
 
 if selection=="Malicious File Scanner":
     selected_option=st.selectbox("Select",("File Scanner", "URL Scanner"))
