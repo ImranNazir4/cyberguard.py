@@ -322,10 +322,8 @@ if selection=="NCA CrimeAssist":
         # st.write("")
         # st.caption("This number is .")
     
-    st.write("The postal address for NCA headquarters is:")
-    st.write("PO Box 8000")
-    st.write("London")
-    st.write("SE11 5EN")
+    st.html("<h4>Postal Address</h4>")
+    st.write("PO Box 8000, London, SE11 5EN")
 
 
     st.html("<h4>Scam alert: fake letters and emails</h4>")
