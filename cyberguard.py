@@ -616,26 +616,26 @@ if selection=="PolicyGuardian":
         
         import streamlit as st
 
-    # Sample Llama response
-    llama_response = "This is the response from Llama. Copy this to your clipboard!"
-    
-    # Create a button to save and download the response
-    if st.button("Save and Download Markdown File"):
-        # Generate the Markdown file content
-        file_name = "Llama_response.md"
-        markdown_content = f"# Llama Response\n\n{llama_response}"
+        # Sample Llama response
+        llama_response = "This is the response from Llama. Copy this to your clipboard!"
         
-        # Use Streamlit's `st.download_button` to allow downloading the file
-        st.download_button(
-            label="Download Markdown File",
-            data=markdown_content,
-            file_name=file_name,
-            mime="text/markdown"
-        )
+        # Create a button to save and download the response
+        if st.button("Save and Download Markdown File"):
+            # Generate the Markdown file content
+            file_name = "Llama_response.md"
+            markdown_content = f"# Llama Response\n\n{llama_response}"
             
-        st.markdown(copy_code, unsafe_allow_html=True)
-
-
+            # Use Streamlit's `st.download_button` to allow downloading the file
+            st.download_button(
+                label="Download Markdown File",
+                data=markdown_content,
+                file_name=file_name,
+                mime="text/markdown"
+            )
+                
+            st.markdown(copy_code, unsafe_allow_html=True)
+    
+    
 
 
 
