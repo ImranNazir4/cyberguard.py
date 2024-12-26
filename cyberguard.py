@@ -105,6 +105,17 @@ llm = ChatGroq(
 #     # Save the document
 #     doc.save(filename)
 
+
+
+# Function to save content to a Markdown file
+def save_to_markdown(content, filename):
+    with open(filename, "w") as f:
+        f.write(content)
+
+
+
+
+
 def get_prompt(query):
     prompt=f"""
     As an expert on UK cybersecurity laws and regulations, your role is to provide clear, accurate, and concise information. When asked, you should:  
@@ -600,6 +611,25 @@ if selection=="PolicyGuardian":
     if st.button("Analyze"):
         res=llm.invoke(get_data_privacy_prompt(text))
         st.write(res.content)
+        # Button to save the response
+        if st.button("Save to Markdown"):
+            if res.strip():
+                filename = "LLaMA_Response.md"
+                save_to_markdown(llama_response, filename)
+                st.success(f"Markdown file saved as {filename}")
+                
+                # Provide a download link
+                with open(filename, "r") as file:
+                    btn = st.download_button(
+                        label="Download Markdown File",
+                        data=file.read(),
+                        file_name=filename,
+                        mime="text/markdown"
+                    )
+            else:
+                st.error("Please enter a response before saving.")
+    
+
 
 
 
