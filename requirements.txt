@@ -15,3 +15,4 @@ python-dotenv
 langchain-groq
 transformers
 colorama
+st-social-media-links
