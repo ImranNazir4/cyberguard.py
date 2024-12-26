@@ -713,7 +713,7 @@ if selection=="Feedback":
     # fb_df=pd.read_csv("fb.csv")
     fb=st.text_area("Help us to Improve Here")
     if st.button("Submit"):
-        save_feedback(user_feedback)
+        save_feedback(fb)
         st.success("Thank you for your feedback!")
     else:
         st.error("Please enter some feedback before submitting.")
