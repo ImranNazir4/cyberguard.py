@@ -28,7 +28,7 @@ from langchain_core.runnables import RunnableParallel, RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 from st_social_media_links import SocialMediaIcons
 # from docx import Document
-
+from streamlit_extras.copy_to_clipboard import copy_to_clipboard
 
 
 
@@ -613,24 +613,13 @@ if selection=="PolicyGuardian":
         res=llm.invoke(get_data_privacy_prompt(text))
         st.write(res.content)
         res=res.content
-        # Button to save the response
-        if res!="":
-            if st.button("Save to Markdown"):
-                filename = "LLaMA_Response.md"
-                save_to_markdown(res, filename)
-                st.success(f"Markdown file saved as {filename}")
-                
-                # Provide a download link
-                with open(filename, "r") as file:
-                    btn = st.download_button(
-                        label="Download Markdown File",
-                        data=file.read(),
-                        file_name=filename,
-                        mime="text/markdown"
-                    )
-            else:
-                st.error("Please enter a response before saving.")
+        st.title("Copy Icon Example")
 
+        # Text to copy
+        text_to_copy = "This is the text to copy!"
+    
+        # Add the copy-to-clipboard feature
+        copy_to_clipboard(res, "📋 Copy")
 
 
 
