@@ -704,13 +704,9 @@ if selection=="PolicyGuardian":
 
 
 
-# Function to save user feedback to a text file
-def save_feedback(feedback):
-    with open("user_feedback.txt", "a") as file:
-        file.write(f"{datetime.now()} - {feedback}\n")
-        # st.write("it is working")
         
 if selection=="Feedback":
+    st.caption("We'd love to hear your thoughts! Your feedback helps us improve and provide a better experience. Please share your thoughts below — it only takes a moment!")
     st.write("Leave Feedback [Here](https://docs.google.com/forms/d/e/1FAIpQLSdVhC0PSPW-ZMToICfdvo3d4kFL4iF30quPKEfq2HK1xg5ksA/viewform?usp=sharing)")
     
 
