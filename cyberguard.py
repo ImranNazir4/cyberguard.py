@@ -480,12 +480,13 @@ if selection=="Malicious File Scanner":
     if selected_option=="URL Scanner":
         st.subheader("Malicious URL Scanner")
         url=st.text_input("Paste URL Here")
-        # Replace 'your_api_key' with your actual VirusTotal API key
-        # api
-        # api_key = '607c93270c569faf4f4de638f16e1e4747bd3d5e6b034368c862afe4a999e7e4'
-        # url_to_scan = 'https://pypi.org/project/streamlit-extras/'
-        scan_id=scan_url(api, url)
-        st.write(scan_id)
+        if st.button("Analyze"):
+            # Replace 'your_api_key' with your actual VirusTotal API key
+            # api
+            # api_key = '607c93270c569faf4f4de638f16e1e4747bd3d5e6b034368c862afe4a999e7e4'
+            # url_to_scan = 'https://pypi.org/project/streamlit-extras/'
+            scan_id=scan_url(api, url)
+            st.write(scan_id)
 
 
 
