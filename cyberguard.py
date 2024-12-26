@@ -612,23 +612,23 @@ if selection=="PolicyGuardian":
         res=llm.invoke(get_data_privacy_prompt(text))
         st.write(res.content)
         # Button to save the response
-        if st.button("Save to Markdown"):
-            if res.strip():
-                filename = "LLaMA_Response.md"
-                save_to_markdown(llama_response, filename)
-                st.success(f"Markdown file saved as {filename}")
-                
-                # Provide a download link
-                with open(filename, "r") as file:
-                    btn = st.download_button(
-                        label="Download Markdown File",
-                        data=file.read(),
-                        file_name=filename,
-                        mime="text/markdown"
-                    )
-            else:
-                st.error("Please enter a response before saving.")
-    
+    if st.button("Save to Markdown"):
+        if res.strip():
+            filename = "LLaMA_Response.md"
+            save_to_markdown(llama_response, filename)
+            st.success(f"Markdown file saved as {filename}")
+            
+            # Provide a download link
+            with open(filename, "r") as file:
+                btn = st.download_button(
+                    label="Download Markdown File",
+                    data=file.read(),
+                    file_name=filename,
+                    mime="text/markdown"
+                )
+        else:
+            st.error("Please enter a response before saving.")
+
 
 
 
