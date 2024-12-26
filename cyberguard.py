@@ -701,8 +701,9 @@ if selection=="PolicyGuardian":
 #     st.write("Test Your Cyber Knowledge [Here](https://docs.google.com/forms/d/e/1FAIpQLSeRVC8WVGSqDHN5B9_kX18RbRnS0gOFyMbKYZFqzBSGyP5rLA/viewform?usp=header)")
     
 # # st.markdown("Test your Knowledge" %url)
-fb_df=pd.read_csv("fb.csv")     
+     
 if selection=="Feedback":
+    fb_df=pd.read_csv("fb.csv")
     fb=st.text_area("Help us to Improve Here")
     if st.button("Submit"):
         # Get current date and time
