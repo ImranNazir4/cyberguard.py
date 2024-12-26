@@ -619,14 +619,14 @@ if selection=="PolicyGuardian":
         file_name = "PolicyGuardian_response.md"
         markdown_content = f"# PolicyGuardian Response\n\n{res}"
         
-    # Use Streamlit's `st.download_button` to allow downloading the file
-    st.download_button(
-        label="Download Markdown File",
-        data=markdown_content,
-        file_name=file_name,
-        mime="text/markdown"
-    )
-    st.success("Downloading Mardown File")
+        # Use Streamlit's `st.download_button` to allow downloading the file
+        st.download_button(
+            label="Download Markdown File",
+            data=markdown_content,
+            file_name=file_name,
+            mime="text/markdown"
+        )
+        st.success("Downloading Mardown File")
         
             # st.markdown(copy_code, unsafe_allow_html=True)
     
