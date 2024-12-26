@@ -422,7 +422,7 @@ if selection=="Cyber Awareness Chatbot":
 if selection=="Malicious File Scanner":
     st.subheader("Malicious File Scanner")
     file=st.file_uploader("Select a File")
-    selected_option=st.select_box("Select",("File Scanner", "URL Scanner")
+    selected_option=st.selectbox("Select",("File Scanner", "URL Scanner"))
                                   
     if selected_option=="File Scanner":
       if file!=None and st.button("Analyze"):     
