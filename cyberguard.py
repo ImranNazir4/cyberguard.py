@@ -201,7 +201,7 @@ if selection=="Dashboard":
             correct.append(1)
     
     col1,col2,col3=st.columns(3)
-    st.write(correct)
+    # st.write(correct)
     with col1:
         # Display pie chart
         fig, ax = plt.subplots(figsize=(5, 5))
