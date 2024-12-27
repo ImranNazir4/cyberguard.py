@@ -607,6 +607,8 @@ if selection=="Education Portal":
     with col2:
         st.caption("Tip for online data security")
         st.video("https://youtu.be/aO858HyFbKI?si=K7mDm_E4WysamUuK")
+
+    st.write("Test Yourself [Here](https://docs.google.com/forms/d/1u2Mm2gwvPQmMWRM_9WTtUC3-E_XRpX93ECFB8hQVMto/edit)")
         
     with st.expander("More"):
         st.write("")
@@ -690,7 +692,7 @@ if selection=="Education Portal":
     with col2:
         st.caption("what is proxy server?")
         st.video("https://youtu.be/5cPIukqXe5w?si=djHvp2rs3GybcwWO")
-        
+    st.write("Test Yourself [Here](https://docs.google.com/forms/d/1u2Mm2gwvPQmMWRM_9WTtUC3-E_XRpX93ECFB8hQVMto/edit)") 
     with st.expander("More"):
         st.write("")
 
@@ -750,6 +752,7 @@ if selection=="Education Portal":
         with col2:
             st.caption("Top 5 cloud security best practices checklist")
             st.video("https://youtu.be/ISkw0MwP2UA?si=AMiYkXKGdWTRc2zA")
+    st.write("Test Yourself [Here](https://docs.google.com/forms/d/1u2Mm2gwvPQmMWRM_9WTtUC3-E_XRpX93ECFB8hQVMto/edit)")
         
 if selection=="PolicyGuardian":
     st.subheader("Welcome to Policy Guardian")
