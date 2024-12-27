@@ -692,7 +692,6 @@ if selection=="Education Portal":
     with col2:
         st.caption("what is proxy server?")
         st.video("https://youtu.be/5cPIukqXe5w?si=djHvp2rs3GybcwWO")
-    st.write("Test Yourself [Here](https://docs.google.com/forms/d/1u2Mm2gwvPQmMWRM_9WTtUC3-E_XRpX93ECFB8hQVMto/edit)") 
     with st.expander("More"):
         st.write("")
 
